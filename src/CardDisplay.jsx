@@ -3,17 +3,19 @@ import data from "./data";
 import { useRef } from "react";
 import { motion, useTransform, useScroll } from "motion/react";
 
-function App() {
+function CardDisplay() {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <h1 className="pointer-events-none absolute inset-0 z-10 mb-[700px] flex items-center justify-center text-5xl font-bold">
+          Our Team
+        </h1>
         <motion.div style={{ x }} className="flex gap-4">
           {data.map((person, index) => {
             return <Card key={index} person={person} />;
@@ -83,4 +85,4 @@ function Skill({ skill, emoji }) {
   );
 }
 
-export default App;
+export default CardDisplay;
