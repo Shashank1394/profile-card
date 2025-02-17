@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
-// import React from "react";
 import data from "./data";
 
 function App() {
-  // Build an array of Card components from the data.
   const cards = data.map((person, index) => (
     <Card key={index} person={person} />
   ));
@@ -11,13 +9,9 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#ece9e6] to-[#ffffff] flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold text-center mb-10">Our Team</h1>
-      {/* Outer container that clips any overflow */}
       <div className="overflow-hidden w-full">
-        {/* Animated container that holds two identical copies of the cards */}
         <div className="flex animate-marquee">
-          {/* Wrap the first copy in a flex container */}
           <div className="flex">{cards}</div>
-          {/* Second copy */}
           <div className="flex">{cards}</div>
         </div>
       </div>
@@ -27,10 +21,7 @@ function App() {
 
 function Card({ person }) {
   return (
-    // Remove gap from the marquee container and let each card handle its own margin
     <div className="flex-none w-[350px] m-5 snap-start">
-      {" "}
-      {/* Fixed dimensions for uniform appearance */}
       <div
         className="bg-white rounded-[15px] shadow-xl overflow-hidden h-[525px] transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
         style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
@@ -45,9 +36,6 @@ function Card({ person }) {
   );
 }
 
-/**
- * Renders the team member's image.
- */
 function Avatar({ image, name }) {
   return (
     <img
@@ -58,9 +46,6 @@ function Avatar({ image, name }) {
   );
 }
 
-/**
- * Displays the team member's name and introduction.
- */
 function Intro({ name, intro }) {
   return (
     <div className="text-center">
@@ -74,9 +59,6 @@ function Intro({ name, intro }) {
   );
 }
 
-/**
- * Maps over the skills and renders each one.
- */
 function SkillList({ skills, emojis }) {
   return (
     <div className="mt-4 flex flex-wrap justify-center gap-4">
@@ -87,9 +69,6 @@ function SkillList({ skills, emojis }) {
   );
 }
 
-/**
- * Displays an individual skill with its corresponding emoji.
- */
 function Skill({ skill, emoji }) {
   return (
     <div className="bg-[#f5f5f5] rounded-lg py-2 px-3 shadow-md transition-transform duration-300 hover:-translate-y-[5px] flex items-center">
