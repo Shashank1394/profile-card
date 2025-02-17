@@ -15,7 +15,7 @@
 const data = [
   {
     name: "Kyle Cambridge",
-    image: "kyle-cambridge.jpg", // Updated image filename
+    image: "kyle-cambridge.jpg",
     intro:
       "Kyle is a versatile full-stack developer with a passion for innovation. He bridges creative front-end design with robust back-end development to deliver seamless user experiences and optimized performance.",
     skills: ["Vue.js", "Node.js", "GraphQL", "TypeScript"],
