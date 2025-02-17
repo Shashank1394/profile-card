@@ -1,16 +1,1 @@
 @import "tailwindcss";
-
-/* Custom keyframes for marquee (infinite scroll) effect */
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Apply the marquee animation to the container */
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
