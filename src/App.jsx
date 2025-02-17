@@ -1,26 +1,24 @@
 /* eslint-disable react/prop-types */
-import data from "./data.js";
+// import React from "react";
+import data from "./data";
 
 function App() {
+  // Build an array of Card components from the data.
+  const cards = data.map((person, index) => (
+    <Card key={index} person={person} />
+  ));
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#ece9e6] to-[#ffffff] flex items-center justify-center">
-      {/* 
-        The outer container has a max width that roughly accommodates 5 cards (5 x 350px = 1750px)
-        Adjust the max-w value as needed.
-      */}
-      <div className="w-full max-w-[1750px] px-5">
-        <h1 className="text-3xl font-bold text-center mb-10">Our Team</h1>
-        {/* 
-          The scroll container: 
-          - "flex" displays cards in a row.
-          - "gap-5" adds spacing between cards.
-          - "overflow-x-auto" enables horizontal scrolling.
-          - "snap-x snap-mandatory" allows scroll snapping (each card snaps into place on scroll).
-        */}
-        <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory">
-          {data.map((person, index) => (
-            <Card key={index} person={person} />
-          ))}
+    <div className="min-h-screen bg-gradient-to-br from-[#ece9e6] to-[#ffffff] flex flex-col items-center justify-center">
+      <h1 className="text-3xl font-bold text-center mb-10">Our Team</h1>
+      {/* Outer container that clips any overflow */}
+      <div className="overflow-hidden w-full">
+        {/* Animated container that holds two identical copies of the cards */}
+        <div className="flex animate-marquee">
+          {/* Wrap the first copy in a flex container */}
+          <div className="flex">{cards}</div>
+          {/* Second copy */}
+          <div className="flex">{cards}</div>
         </div>
       </div>
     </div>
@@ -29,10 +27,12 @@ function App() {
 
 function Card({ person }) {
   return (
-    // The "flex-none" class ensures that the card does not shrink and "snap-start" makes it snap into view.
-    <div className="flex-none w-[350px] snap-start">
+    // Remove gap from the marquee container and let each card handle its own margin
+    <div className="flex-none w-[350px] m-5 snap-start">
+      {" "}
+      {/* Fixed dimensions for uniform appearance */}
       <div
-        className="bg-white rounded-[15px] shadow-xl overflow-hidden m-5 transition-all duration-500 transform hover:[transform:scale(1.05)_rotateY(10deg)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)]"
+        className="bg-white rounded-[15px] shadow-xl overflow-hidden h-[525px] transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
         style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
       >
         <Avatar image={person.image} name={person.name} />
