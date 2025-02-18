@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Corinthia";
+  src: url(./assets/fonts/Corinthia-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Corinthia";
+  src: url(./assets/fonts/Corinthia-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Fleur De Leah";
+  src: url(./assets/fonts/FleurDeLeah-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Caramel";
+  src: url(./assets/fonts/Caramel-Regular.ttf);
+}
+
 :root {
   --color-bg: #1f2937;
   --color-text: #f3f4f6;
@@ -14,7 +34,30 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--color-text);
-  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.corinthia-regular {
+  font-family: "Corinthia", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.corinthia-bold {
+  font-family: "Corinthia", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.fleur-de-leah-regular {
+  font-family: "Fleur De Leah", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caramel-regular {
+  font-family: "Caramel", serif;
+  font-weight: 400;
+  font-style: normal;
 }

@@ -1,6 +1,6 @@
 // src/components/LandingPage.jsx
 
-import Header from "../components/Header";
+import Header from "./Title";
 import CardDisplay from "../components/CardDisplay";
 
 function LandingPage() {
