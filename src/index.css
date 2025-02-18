@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+:root {
+  --color-bg: #1f2937;
+  --color-text: #f3f4f6;
+  --color-accent-orange: #f59e0b;
+  --color-accent-green: #84cc16;
+}
+
+body {
+  background-image: url("/landing-page.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}

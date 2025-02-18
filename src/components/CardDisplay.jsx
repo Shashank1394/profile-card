@@ -1,3 +1,5 @@
+// src/components/CardDisplay.jsx
+
 /* eslint-disable react/prop-types */
 import data from "./data";
 import { useRef } from "react";
@@ -8,13 +10,13 @@ function CardDisplay() {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <h1 className="pointer-events-none absolute inset-0 z-10 mb-[700px] flex items-center justify-center text-5xl font-bold">
-          Our Team
+          Meet Our Team
         </h1>
         <motion.div style={{ x }} className="flex gap-4">
           {data.map((person, index) => {
@@ -78,7 +80,7 @@ function SkillList({ skills, emojis }) {
 
 function Skill({ skill, emoji }) {
   return (
-    <div className="flex items-center rounded-lg bg-[#f5f5f5] px-3 py-2 shadow-md transition-transform duration-300 hover:-translate-y-[5px]">
+    <div className="flex items-center rounded-lg px-3 py-2 shadow-md transition-transform duration-300 hover:-translate-y-[5px]">
       <span className="mr-[5px] font-bold text-gray-800">{skill}</span>
       <span className="text-[1.2rem]">{emoji}</span>
     </div>
